@@ -1,5 +1,7 @@
 # Working with date and time Functionality
 
-## Features
-- coming soon..
+## Installation
+- Install package using ```npm install @syncfusion/ej2-react-calendars```
+
+
 
