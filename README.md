@@ -13,6 +13,12 @@
 
 ## Formatting and giving range
 Here is the Example 
+> Set the Value
+```
+  const minDate = new Date("12/02/2021 10:30 AM");
+  const maxDate = new Date("12/13/2021 10:30 AM");
+```
+> Rendering
 ```
 <DateTimePickerComponent
           placeholder="Choose To date"
