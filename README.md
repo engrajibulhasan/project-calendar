@@ -12,7 +12,7 @@
 
 
 ## Formatting and giving range
-- Here is the Example 
+Here is the Example 
 ```
 <DateTimePickerComponent
           placeholder="Choose To date"
