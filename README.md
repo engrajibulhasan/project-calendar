@@ -11,6 +11,19 @@
 - Add this component and check your output ```<DateTimePickerComponent></DateTimePickerComponent>```
 
 
+## Formatting and giving range
+- Here is the Example 
+```
+<DateTimePickerComponent
+          placeholder="Choose To date"
+          min={minDate}
+          max={maxDate}
+          format="dd/MM/yyyy HH:mm a"
+        >
+</DateTimePickerComponent>
+```
+
+
 
 
 

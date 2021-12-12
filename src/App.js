@@ -4,6 +4,8 @@ import { style } from "./Style";
 
 function App() {
   const dateValue = new Date("02/12/2021 10:30 AM");
+  const minDate = new Date("12/02/2021 10:30 AM");
+  const maxDate = new Date("12/13/2021 10:30 AM");
 
   return (
     <div className="App">
@@ -16,13 +18,16 @@ function App() {
         ></DateTimePickerComponent>
       </div>
       <div style={{ width: "300px", margin: "auto" }}>
-        <DateTimePickerComponent placeholder="Choose To date"></DateTimePickerComponent>
+        <DateTimePickerComponent
+          placeholder="Choose To date"
+          min={minDate}
+          max={maxDate}
+          format="dd/MM/yyyy HH:mm a"
+        ></DateTimePickerComponent>
       </div>
 
       {/* Output */}
-      <div
-        style={style.outputBox}
-      >
+      <div style={style.outputBox}>
         <h3>Output</h3>
         <p>From Date:</p>
         <p>To Date:</p>
