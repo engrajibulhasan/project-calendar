@@ -31,6 +31,10 @@ function App() {
     return formattedOutput;
   }
 
+  const handleDateRange=(theValue)=>{
+    console.log("The date value is",theValue);
+    setFromDate(formatDate('minus',theValue))
+  }
 
   console.log("Default From",fromDate.viewFormat)
   console.log("Default To",toDate.viewFormat)
@@ -38,6 +42,20 @@ function App() {
   return (
     <div className="App">
       <h1>Date time</h1>
+      <div style={{ width: "300px", margin: "20px auto" }}>
+        <select name="range" id="range" onChange={(e)=>handleDateRange(e.target.value)} style={{width:'100%'}}>
+          <option defaultValue="7" >Last 7 Days</option>
+          <option value="15" >Last 15 Days</option>
+          <option value="30" >Last 30 Days</option>
+          <option value="60" >Last 60 Days</option>
+          <option value="90" >Last 90 Days</option>
+          <option value="180" >Last 6 Month</option>
+          <option value="365" >Last 12 Month</option>
+          <option value="730" >Last 2 Year</option>
+          <option value="1825" >Last 5 Year</option>
+          <option value="3650" >Last 10 Year</option>
+        </select>
+      </div>
       {/* From Input */}
       <div style={{ width: "300px", margin: "auto" }}>
         <DateTimePickerComponent
