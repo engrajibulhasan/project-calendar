@@ -1,8 +1,5 @@
 # Working with date and time Functionality
 
-## [Visit Official Documentation](https://ej2.syncfusion.com/react/documentation/calendar/getting-started/)
-
-
 ## Installation
 - Install package using ```npm install @syncfusion/ej2-react-calendars```
 
@@ -31,6 +28,11 @@ Here is the Example
         >
 </DateTimePickerComponent>
 ```
+
+
+### [Visit Official Documentation](https://ej2.syncfusion.com/react/documentation/calendar/getting-started/)
+
+
 
 
 

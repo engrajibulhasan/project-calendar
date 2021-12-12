@@ -1,38 +1,70 @@
 import { DateTimePickerComponent } from "@syncfusion/ej2-react-calendars";
+import moment from "moment";
+import { useState } from "react";
 import "./App.css";
 import { style } from "./Style";
 
 function App() {
-  const dateValue = new Date("02/12/2021 10:30 AM");
-  const minDate = new Date("12/02/2021 10:30 AM");
-  const maxDate = new Date("12/13/2021 10:30 AM");
+  //For server rendering we need uinx Time format
+  //Logically DateTimePickerComponent component supported format MM/dd/yyy HH:mm a
+  // formatDate('minus',90)
+  const [fromDate, setFromDate] = useState(formatDate('minus',7));
+  const [toDate, setToDate] = useState(formatDate());
+
+
+  function formatDate(action = "plus", count = 0) {
+    let theDate = new Date();
+    let formattedOutput = {
+      viewFormat: "",
+      unixFormat: "",
+      logicalFormat: "",
+    };
+
+    if (count > 0) {
+      action === "plus"&&theDate.setDate(theDate.getDate() + count);
+      action === "minus"&&theDate.setDate(theDate.getDate() - count)
+    }
+
+    formattedOutput.logicalFormat = theDate;
+    formattedOutput.unixFormat = moment(theDate).unix();
+    formattedOutput.viewFormat = moment(theDate).format("DD/MM/yyyy HH:mm A");
+    return formattedOutput;
+  }
+
+
+  console.log("Default From",fromDate.viewFormat)
+  console.log("Default To",toDate.viewFormat)
 
   return (
     <div className="App">
       <h1>Date time</h1>
-      {/* Input */}
+      {/* From Input */}
       <div style={{ width: "300px", margin: "auto" }}>
         <DateTimePickerComponent
           placeholder="Choose From date"
-          value={dateValue}
+          value={fromDate.logicalFormat}
+          format="dd/MM/yyyy HH:mm a"
         ></DateTimePickerComponent>
       </div>
+
+
+       {/* To Input */}
       <div style={{ width: "300px", margin: "auto" }}>
         <DateTimePickerComponent
           placeholder="Choose To date"
-          min={minDate}
-          max={maxDate}
+          value={toDate.logicalFormat}
+          max={toDate.logicalFormat}
           format="dd/MM/yyyy HH:mm a"
         ></DateTimePickerComponent>
       </div>
 
       {/* Output */}
-      <div style={style.outputBox}>
+      {/* <div style={style.outputBox}>
         <h3>Output</h3>
-        <p>From Date:</p>
-        <p>To Date:</p>
-        <p>Total Days:</p>
-      </div>
+        <p>From Date: {fromDate.viewFormat}</p>
+        <p>To Date: {toDate.viewFormat}</p>
+        <p>Total Days: </p>
+      </div> */}
     </div>
   );
 }
