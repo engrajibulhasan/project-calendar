@@ -8,9 +8,9 @@ function App() {
   //For server rendering we need uinx Time format
   //Logically DateTimePickerComponent component supported format MM/dd/yyy HH:mm a
   // formatDate('minus',90)
-  const [fromDate, setFromDate] = useState(formatDate('minus',7));
+  const [fromDate, setFromDate] = useState(formatDate('plus',12));
   const [toDate, setToDate] = useState(formatDate());
-
+  console.log(fromDate);
 
   function formatDate(action = "plus", count = 0) {
     let theDate = new Date();
