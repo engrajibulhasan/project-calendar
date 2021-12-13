@@ -32,13 +32,14 @@ Here is the Example
 
 ## What I did in this project
 - I have declared ```formatDate(action = "plus", count = 0)``` function with two parameters. You can pass action **plus** or **minus** and count should not less than **0**
-- ```formatDate("plus",12)``` returns an object based on **plus** and **12** ```
-    {
+- 
+```formatDate("plus",12)``` returns an object based on **plus** and **12** 
+```{
     "viewFormat": "25/12/2021 10:47 AM",
     "unixFormat": 1640407635,
     "logicalFormat": "2021-12-25T04:47:15.082Z"
     }
-  ```
+```
   - This return value stored into a state
 
 
