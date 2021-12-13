@@ -32,7 +32,7 @@ Here is the Example
 
 ## What I did in this project
 - I have declared ```formatDate(action = "plus", count = 0)``` function with two parameters. You can pass action **plus** or **minus** and count should not less than **0**
-- 
+- Example:
 ```formatDate("plus",12)``` returns an object based on **plus** and **12** 
 ```{
     "viewFormat": "25/12/2021 10:47 AM",
@@ -44,6 +44,8 @@ Here is the Example
 
 
 ### [Visit Official Documentation](https://ej2.syncfusion.com/react/documentation/calendar/getting-started/)
+
+> Check my all projects in [www.rajibulhasan.me](https://www.rajibulhasan.me/)
 
 
 
