@@ -36,6 +36,13 @@ function App() {
     setFromDate(formatDate('minus',theValue))
   }
 
+
+  const handleChange = e => {
+    const {name, value} = e.target;
+    console.log("Name: ",name,"Value: ",value)
+    
+};
+
   console.log("Default From",fromDate.viewFormat)
   console.log("Default To",toDate.viewFormat)
 
@@ -53,7 +60,6 @@ function App() {
           <option value="365" >Last 12 Month</option>
           <option value="730" >Last 2 Year</option>
           <option value="1825" >Last 5 Year</option>
-          <option value="3650" >Last 10 Year</option>
         </select>
       </div>
       {/* From Input */}
@@ -62,6 +68,8 @@ function App() {
           placeholder="Choose From date"
           value={fromDate.logicalFormat}
           format="dd/MM/yyyy HH:mm a"
+          name="cdr_duration_from"
+          onChange={handleChange}
         ></DateTimePickerComponent>
       </div>
 
@@ -70,6 +78,8 @@ function App() {
       <div style={{ width: "300px", margin: "auto" }}>
         <DateTimePickerComponent
           placeholder="Choose To date"
+          name="cdr_duration_to"
+          onChange={handleChange}
           value={toDate.logicalFormat}
           max={toDate.logicalFormat}
           format="dd/MM/yyyy HH:mm a"
