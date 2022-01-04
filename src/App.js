@@ -56,9 +56,6 @@ function App() {
           <option value="30" >Last 30 Days</option>
           <option value="60" >Last 60 Days</option>
           <option value="90" >Last 90 Days</option>
-          <option value="180" >Last 6 Month</option>
-          <option value="365" >Last 12 Month</option>
-          <option value="730" >Last 2 Year</option>
         </select>
       </div>
       {/* From Input */}
