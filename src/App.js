@@ -59,7 +59,6 @@ function App() {
           <option value="180" >Last 6 Month</option>
           <option value="365" >Last 12 Month</option>
           <option value="730" >Last 2 Year</option>
-          <option value="1825" >Last 5 Year</option>
         </select>
       </div>
       {/* From Input */}
